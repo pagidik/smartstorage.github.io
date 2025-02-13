@@ -54,3 +54,48 @@ setInterval(() => {
 
 // Initialize the first slide
 showSlide(currentIndex);
+
+// Add this to your existing scripts.js file
+document.addEventListener('DOMContentLoaded', function() {
+    const configureRfqLink = document.getElementById('configure-rfq');
+    const aiChatBox = document.getElementById('ai-chat-box');
+    const closeChat = document.getElementById('close-chat');
+
+    configureRfqLink.addEventListener('click', function(e) {
+        e.preventDefault();
+        aiChatBox.classList.remove('hidden');
+    });
+
+    closeChat.addEventListener('click', function() {
+        aiChatBox.classList.add('hidden');
+    });
+
+    const chatInputs = document.querySelectorAll('.chat-input');
+    const sendButtons = document.querySelectorAll('.chat-send');
+
+    sendButtons.forEach((button, index) => {
+        button.addEventListener('click', () => {
+            const input = chatInputs[index];
+            const message = input.value.trim();
+            
+            if (message) {
+                // Here you can handle the message, e.g., send to a server
+                console.log('Message sent:', message);
+                input.value = ''; // Clear input after sending
+            }
+        });
+    });
+
+    // Allow sending message with Enter key
+    chatInputs.forEach(input => {
+        input.addEventListener('keypress', (e) => {
+            if (e.key === 'Enter') {
+                const message = input.value.trim();
+                if (message) {
+                    console.log('Message sent:', message);
+                    input.value = '';
+                }
+            }
+        });
+    });
+});
