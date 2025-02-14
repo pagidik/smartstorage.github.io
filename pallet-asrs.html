@@ -32,7 +32,7 @@
       <img src="images/smart_systems.png" alt="Smart Storage" style="max-height: 60px;" />
     </div>
 
-    <!-- Desktop Nav (same links) -->
+    <!-- Desktop Nav -->
     <nav class="desktop-nav">
       <ul>
         <li><a href="index.html">Home</a></li>
@@ -129,8 +129,7 @@
   style="
     background: #f9f9f9;
     padding: 40px 0;
-  "
->
+  ">
   <div class="container" style="display: flex; flex-wrap: wrap; align-items: center; gap: 20px;">
     <!-- Text on the LEFT -->
     <div style="flex: 1; min-width: 280px;">
@@ -144,30 +143,10 @@
       <!-- Buttons -->
       <a href="#" class="hero-button" style="margin-right: 10px;">View More</a>
       <a href="#" class="hero-button" style="background: #005386; color: #fff;">Configure &amp; RFQ</a>
-      <div class="chat-interface" style="margin-top: 20px; width: 100%; border: 1px solid #ddd; border-radius: 8px; background: #fff;">
-        <!-- Chat messages will appear here -->
-        <div class="chat-messages" style="padding: 15px; max-height: 300px; overflow-y: auto;">
-          <div class="ai-message" style="display: flex; gap: 8px; margin-bottom: 15px;">
-            <img src="images/ai-icon.png" alt="AI" style="width: 24px; height: 24px;">
-            <div style="background: #f0f7ff; padding: 10px; border-radius: 8px; color: #333;">
-              Hi! I can help you configure Multi-deep Shuttle ASRS. What would you like to know?
-            </div>
-          </div>
-        </div>
-        <!-- Input area -->
-        <div style="display: flex; gap: 10px; padding: 15px; border-top: 1px solid #eee; background: #f8f9fa;">
-          <input type="text" 
-            class="chat-input"
-            placeholder="Type your message..."
-            style="flex: 1; padding: 10px 15px; border: 1px solid #ddd; border-radius: 5px; font-size: 14px; background: #fff;"
-          >
-          <button class="send-button" style="padding: 10px 20px; background: #005386; color: white; border: none; border-radius: 5px; cursor: pointer;">Send</button>
-        </div>
-      </div>
+      <!-- Chat interface removed from this section -->
     </div>
     <!-- Image on the RIGHT -->
     <div style="flex: 1; min-width: 280px;">
-      <!-- Example picsum photo -->
       <img 
         src="images/miniload.webp" 
         alt="Multi-deep Shuttle" 
@@ -177,13 +156,12 @@
   </div>
 </section>
 
-<!-- Pallet ASRS Crane (Image Left, Text Right) (unchanged) -->
+<!-- Pallet ASRS Crane (Image Left, Text Right) -->
 <section 
   style="
     background: #f4f4f4;
     padding: 40px 0;
-  "
->
+  ">
   <div class="container" style="display: flex; align-items: center; gap: 20px; flex-wrap: wrap;">
     <!-- Image LEFT -->
     <img 
@@ -207,13 +185,12 @@
   </div>
 </section>
 
-<!-- Crane Shuttle ASRS (Text Left, Image Right, same as first) -->
+<!-- Crane Shuttle ASRS (Text Left, Image Right) -->
 <section 
   style="
     background: #f9f9f9;
     padding: 40px 0;
-  "
->
+  ">
   <div class="container" style="display: flex; flex-wrap: wrap; align-items: center; gap: 20px;">
     <!-- Text LEFT -->
     <div style="flex: 1; min-width: 280px;">
@@ -226,7 +203,25 @@
       </p>
       <a href="#" class="hero-button" style="margin-right: 10px;">View More</a>
       <a href="#" class="hero-button" style="background: #005386; color: #fff;">Configure &amp; RFQ</a>
-
+      
+      <!-- Chat interface added for Crane Shuttle ASRS only -->
+      <div id="crane-chat-interface" class="chat-interface" style="margin-top: 20px; border: 1px solid #ddd; border-radius: 8px; background: #fff;">
+        <div class="chat-messages" style="padding: 15px; max-height: 300px; overflow-y: auto;">
+          <div class="message ai" style="display: flex; gap: 8px; margin-bottom: 15px;">
+            <img src="images/ai-icon.png" alt="AI" style="width: 24px; height: 24px;">
+            <div class="text" style="background: #f0f7ff; padding: 10px; border-radius: 8px; color: #333;">
+              Hi! How can I help you configure Crane Shuttle ASRS?
+            </div>
+          </div>
+        </div>
+        <div class="chat-input-area" style="display: flex; gap: 10px; padding: 15px; border-top: 1px solid #eee; background: #f8f9fa;">
+          <input type="text" 
+            class="chat-input"
+            placeholder="Type your message..."
+            style="flex: 1; padding: 10px 15px; border: 1px solid #ddd; border-radius: 5px; font-size: 14px; background: #fff;">
+          <button class="send-button" style="padding: 10px 20px; background: #005386; color: white; border: none; border-radius: 5px; cursor: pointer;">Send</button>
+        </div>
+      </div>
     </div>
     <!-- Image RIGHT -->
     <div style="flex: 1; min-width: 280px;">
@@ -241,9 +236,7 @@
 
 <!-- Footer -->
 <footer style="background: #000; color: #fff; padding: 20px 0;">
-  <div 
-    class="container footer-content" 
-    style="display: flex; justify-content: space-between; align-items: center;">
+  <div class="container footer-content" style="display: flex; justify-content: space-between; align-items: center;">
     <div>
       <p>&copy; 2025 Smart Storage</p>
     </div>
@@ -255,229 +248,144 @@
 
 <script>
   // Mobile Menu Toggle
-const mobileToggle = document.getElementById("mobile-toggle");
-const mobileNav = document.getElementById("mobile-nav");
+  const mobileToggle = document.getElementById("mobile-toggle");
+  const mobileNav = document.getElementById("mobile-nav");
 
-mobileToggle.addEventListener("click", () => {
-  mobileNav.style.display = mobileNav.style.display === "block" ? "none" : "block";
-});
-
-// Hero Slider (unchanged)
-let slides = document.querySelectorAll(".hero-slide");
-let currentIndex = 0;
-
-const prev = document.querySelector(".prev-slide");
-const next = document.querySelector(".next-slide");
-
-function showSlide(index) {
-  slides.forEach((slide, i) => {
-    slide.classList.remove("current-slide");
-    slide.style.display = "none";
-    if (i === index) {
-      slide.classList.add("current-slide");
-      slide.style.display = "flex";
-    }
+  mobileToggle.addEventListener("click", () => {
+    mobileNav.style.display = mobileNav.style.display === "block" ? "none" : "block";
   });
-}
 
-function nextSlide() {
-  currentIndex = (currentIndex + 1) % slides.length;
-  showSlide(currentIndex);
-}
+  // Chat functionality for Crane Shuttle ASRS only
+  function attachChatFunctionality(chatInterface) {
+    const messagesDiv = chatInterface.querySelector('.chat-messages');
+    const input = chatInterface.querySelector('input');
+    const sendButton = chatInterface.querySelector('button');
 
-function prevSlide() {
-  currentIndex = (currentIndex - 1 + slides.length) % slides.length;
-  showSlide(currentIndex);
-}
-
-if (next && prev) {
-  next.addEventListener("click", nextSlide);
-  prev.addEventListener("click", prevSlide);
-}
-
-// Auto-play slides (optional)
-setInterval(() => {
-  nextSlide();
-}, 5000);
-
-// Initialize the first slide
-showSlide(currentIndex);
-
-// Add chat styles to head with spinner and processing text styles
-const chatStyles = document.createElement('style');
-chatStyles.textContent = `
-    .chat-interface {
-        margin-top: 15px;
-        border: 1px solid #ddd;
-        border-radius: 8px;
-        background: white;
-    }
-    .chat-messages {
-        min-height: 100px;
-        max-height: 300px;
-        overflow-y: auto;
-        padding: 15px;
-    }
-    .message {
-        margin-bottom: 10px;
-        display: flex;
-        gap: 8px;
-    }
-    .message.user {
-        justify-content: flex-end;
-    }
-    .message.user .text {
-        background: #005386;
-        color: white;
-        padding: 8px 12px;
-        border-radius: 15px;
-        max-width: 80%;
-    }
-    .message.ai {
-        justify-content: flex-start;
-    }
-    .message.ai .text {
-        background: #f0f7ff;
-        color: #333;
-        padding: 8px 12px;
-        border-radius: 15px;
-        max-width: 80%;
-    }
-    .chat-input-area {
-        display: flex;
-        padding: 10px;
-        gap: 10px;
-        border-top: 1px solid #eee;
-        background: #f8f9fa;
-    }
-    /* Spinner styles */
-    .spinner {
-        display: inline-block;
-        width: 24px;
-        height: 24px;
-        border: 3px solid rgba(0, 83, 134, 0.3);
-        border-radius: 50%;
-        border-top-color: #005386;
-        animation: spin 1s ease-in-out infinite;
-        vertical-align: middle;
-        margin-right: 8px;
-    }
-    @keyframes spin {
-        to { transform: rotate(360deg); }
-    }
-    .processing-text {
-        display: inline-block;
-        vertical-align: middle;
-    }
-`;
-document.head.appendChild(chatStyles);
-
-/**
- * Attaches the chat functionality (listening for Enter and Send clicks)
- * to the provided chat interface element.
- */
-function attachChatFunctionality(chatInterface) {
-  const messagesDiv = chatInterface.querySelector('.chat-messages');
-  const input = chatInterface.querySelector('input');
-  const sendButton = chatInterface.querySelector('button');
-
-  function addMessage(text, isUser) {
-    const messageDiv = document.createElement('div');
-    messageDiv.className = `message ${isUser ? 'user' : 'ai'}`;
-    let content = '';
-    if (!isUser) {
-      content += `<img src="images/ai-icon.png" alt="AI" style="width: 24px; height: 24px;">`;
-    }
-    content += `<div class="text">${text}</div>`;
-    messageDiv.innerHTML = content;
-    messagesDiv.appendChild(messageDiv);
-    messagesDiv.scrollTop = messagesDiv.scrollHeight;
-  }
-
-  function handleMessage() {
-    const text = input.value.trim();
-    if (text !== '') {
-      addMessage(text, true);
-      input.value = '';
-
-      // Add spinner and "processing request..." text for AI's delay
-      const processingMessage = document.createElement('div');
-      processingMessage.className = 'message ai';
-      processingMessage.innerHTML = `
-        <img src="images/ai-icon.png" alt="AI" style="width: 24px; height: 24px;">
-        <div class="text">
-          <span class="spinner"></span>
-          <span class="processing-text">Processing your request...</span>
-        </div>
-      `;
-      messagesDiv.appendChild(processingMessage);
+    function addMessage(htmlContent, isUser) {
+      const messageDiv = document.createElement('div');
+      messageDiv.className = `message ${isUser ? 'user' : 'ai'}`;
+      if (isUser) {
+        messageDiv.innerHTML = `<div class="text">${htmlContent}</div>`;
+      } else {
+        messageDiv.innerHTML = `<img src="images/ai-icon.png" alt="AI" style="width: 24px; height: 24px;">
+                                <div class="text">${htmlContent}</div>`;
+      }
+      messagesDiv.appendChild(messageDiv);
       messagesDiv.scrollTop = messagesDiv.scrollHeight;
-
-      // After 3 seconds, remove the processing indicator and show the final AI response
-      setTimeout(() => {
-        messagesDiv.removeChild(processingMessage);
-        addMessage('Thank you for your request. I am configuring your single-side vertical stack storage system with 12 racks, featuring automated loading, unloading, and retrieval. Each bin supports up to 1,200 lbs and is designed to accommodate a wide range of object sizes, from very small to large. Click "Configure & RFQ" to finalize your setup or make further modifications as needed.', false);
-      }, 2000);
     }
+
+    function handleMessage() {
+      const text = input.value.trim();
+      if (text !== '') {
+        addMessage(text, true);
+        input.value = '';
+
+        // Show processing indicator
+        const processingMessage = document.createElement('div');
+        processingMessage.className = 'message ai';
+        processingMessage.innerHTML = `
+          <img src="images/ai-icon.png" alt="AI" style="width: 24px; height: 24px;">
+          <div class="text">
+            <span class="spinner"></span>
+            <span class="processing-text">Processing your request...</span>
+          </div>
+        `;
+        messagesDiv.appendChild(processingMessage);
+        messagesDiv.scrollTop = messagesDiv.scrollHeight;
+
+        setTimeout(() => {
+          messagesDiv.removeChild(processingMessage);
+          addMessage('Thank you for your request. I am configuring your single-side vertical stack storage system with 12 racks, featuring automated loading, unloading, and retrieval. Each bin supports up to 1,200 lbs and is designed to accommodate a wide range of object sizes, from very small to large. <a href="#" style="color: #005386; text-decoration: underline;">Click here</a> to finalize your setup or make further modifications as needed.', false);
+        }, 2000);
+      }
+    }
+
+    input.addEventListener('keypress', (e) => {
+      if (e.key === 'Enter') {
+        e.preventDefault();
+        handleMessage();
+      }
+    });
+
+    sendButton.addEventListener('click', handleMessage);
   }
 
-  input.addEventListener('keypress', (e) => {
-    if (e.key === 'Enter') {
-      e.preventDefault();
-      handleMessage();
+  // Initialize chat functionality on the Crane Shuttle ASRS section only.
+  document.addEventListener('DOMContentLoaded', function() {
+    const craneChat = document.getElementById('crane-chat-interface');
+    if (craneChat) {
+      attachChatFunctionality(craneChat);
     }
   });
-
-  sendButton.addEventListener('click', handleMessage);
-}
-
-/**
- * Initializes chat functionality:
- * 1. Attaches chat functionality to any chat box already in the HTML.
- * 2. For every hero-button with "Configure" text, ensures a chat box is present,
- *    and attaches chat functionality to it.
- */
-function initializeChat() {
-  // 1. Attach to existing chat interfaces (e.g. the one in your Multi-deep Shuttle section)
-  document.querySelectorAll('.chat-interface').forEach((chatInterface) => {
-    attachChatFunctionality(chatInterface);
-  });
-
-  // 2. For buttons that include "Configure", add a chat interface if one isn't present already
-  const configButtons = Array.from(document.getElementsByClassName('hero-button')).filter(
-    button => button.textContent.includes('Configure')
-  );
-
-  configButtons.forEach(button => {
-    let chatInterface = button.nextElementSibling;
-    if (!chatInterface || !chatInterface.classList.contains('chat-interface')) {
-      chatInterface = document.createElement('div');
-      chatInterface.className = 'chat-interface';
-      chatInterface.innerHTML = `
-            <div class="chat-messages">
-                <div class="message ai">
-                    <img src="images/ai-icon.png" alt="AI" style="width: 24px; height: 24px;">
-                    <div class="text">Hi! How can I help you configure this system?</div>
-                </div>
-            </div>
-            <div class="chat-input-area">
-                <input type="text" placeholder="Type your message..." style="flex: 1; padding: 8px 12px; border: 1px solid #ddd; border-radius: 5px;">
-                <button style="padding: 8px 15px; background: #005386; color: white; border: none; border-radius: 5px; cursor: pointer;">Send</button>
-            </div>
-      `;
-      button.parentNode.insertBefore(chatInterface, button.nextSibling);
-    }
-    attachChatFunctionality(chatInterface);
-  });
-}
-
-// Initialize after DOM is fully loaded
-if (document.readyState === 'loading') {
-  document.addEventListener('DOMContentLoaded', initializeChat);
-} else {
-  initializeChat();
-}
-
+  
+  // Chat CSS styles
+  const chatStyles = document.createElement('style');
+  chatStyles.textContent = `
+      .chat-interface {
+          margin-top: 15px;
+          border: 1px solid #ddd;
+          border-radius: 8px;
+          background: white;
+      }
+      .chat-messages {
+          min-height: 100px;
+          max-height: 300px;
+          overflow-y: auto;
+          padding: 15px;
+      }
+      .message {
+          margin-bottom: 10px;
+          display: flex;
+          gap: 8px;
+      }
+      .message.user {
+          justify-content: flex-end;
+      }
+      .message.user .text {
+          background: #005386;
+          color: white;
+          padding: 8px 12px;
+          border-radius: 15px;
+          max-width: 80%;
+      }
+      .message.ai {
+          justify-content: flex-start;
+      }
+      .message.ai .text {
+          background: #f0f7ff;
+          color: #333;
+          padding: 8px 12px;
+          border-radius: 15px;
+          max-width: 80%;
+      }
+      .chat-input-area {
+          display: flex;
+          padding: 10px;
+          gap: 10px;
+          border-top: 1px solid #eee;
+          background: #f8f9fa;
+      }
+      /* Spinner styles */
+      .spinner {
+          display: inline-block;
+          width: 24px;
+          height: 24px;
+          border: 3px solid rgba(0, 83, 134, 0.3);
+          border-radius: 50%;
+          border-top-color: #005386;
+          animation: spin 1s ease-in-out infinite;
+          vertical-align: middle;
+          margin-right: 8px;
+      }
+      @keyframes spin {
+          to { transform: rotate(360deg); }
+      }
+      .processing-text {
+          display: inline-block;
+          vertical-align: middle;
+      }
+  `;
+  document.head.appendChild(chatStyles);
 </script>
 </body>
 </html>
