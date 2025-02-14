@@ -144,11 +144,25 @@
       <!-- Buttons -->
       <a href="#" class="hero-button" style="margin-right: 10px;">View More</a>
       <a href="#" class="hero-button" style="background: #005386; color: #fff;">Configure &amp; RFQ</a>
-      <div style="margin-top: 20px; display: flex; gap: 10px; width: 100%;">
-        <input type="text" 
-          style="flex: 1; padding: 10px 15px; border: 1px solid #ddd; border-radius: 5px; font-size: 14px; background: #fff; color: #333;" 
-          placeholder="Configure & RFQ Multi-deep Shuttle ASRS...">
-        <button style="padding: 10px 20px; background: #005386; color: white; border: none; border-radius: 5px; cursor: pointer; font-size: 14px; font-family: inherit; line-height: 1.5;">Send</button>
+      <div class="chat-interface" style="margin-top: 20px; width: 100%; border: 1px solid #ddd; border-radius: 8px; background: #fff;">
+        <!-- Chat messages will appear here -->
+        <div class="chat-messages" style="padding: 15px; max-height: 300px; overflow-y: auto;">
+          <div class="ai-message" style="display: flex; gap: 8px; margin-bottom: 15px;">
+            <img src="images/ai-icon.png" alt="AI" style="width: 24px; height: 24px;">
+            <div style="background: #f0f7ff; padding: 10px; border-radius: 8px; color: #333;">
+              Hi! I can help you configure Multi-deep Shuttle ASRS. What would you like to know?
+            </div>
+          </div>
+        </div>
+        <!-- Input area -->
+        <div style="display: flex; gap: 10px; padding: 15px; border-top: 1px solid #eee; background: #f8f9fa;">
+          <input type="text" 
+            class="chat-input"
+            placeholder="Type your message..."
+            style="flex: 1; padding: 10px 15px; border: 1px solid #ddd; border-radius: 5px; font-size: 14px; background: #fff;"
+          >
+          <button class="send-button" style="padding: 10px 20px; background: #005386; color: white; border: none; border-radius: 5px; cursor: pointer;">Send</button>
+        </div>
       </div>
     </div>
     <!-- Image on the RIGHT -->
@@ -189,12 +203,6 @@
       </p>
       <a href="#" class="hero-button" style="margin-right: 10px;">View More</a>
       <a href="#" class="hero-button" style="background: #005386; color: #fff;">Configure &amp; RFQ</a>
-      <div style="margin-top: 20px; display: flex; gap: 10px; width: 100%;">
-        <input type="text" 
-          style="flex: 1; padding: 10px 15px; border: 1px solid #ddd; border-radius: 5px; font-size: 14px; background: #fff; color: #333;" 
-          placeholder="Configure & RFQ Pallet ASRS Crane...">
-        <button style="padding: 10px 20px; background: #005386; color: white; border: none; border-radius: 5px; cursor: pointer; font-size: 14px; font-family: inherit; line-height: 1.5;">Send</button>
-      </div>
     </div>
   </div>
 </section>
@@ -218,12 +226,7 @@
       </p>
       <a href="#" class="hero-button" style="margin-right: 10px;">View More</a>
       <a href="#" class="hero-button" style="background: #005386; color: #fff;">Configure &amp; RFQ</a>
-      <div style="margin-top: 20px; display: flex; gap: 10px; width: 100%;">
-        <input type="text" 
-          style="flex: 1; padding: 10px 15px; border: 1px solid #ddd; border-radius: 5px; font-size: 14px; background: #fff; color: #333;" 
-          placeholder="Configure & RFQ Crane Shuttle ASRS...">
-        <button style="padding: 10px 20px; background: #005386; color: white; border: none; border-radius: 5px; cursor: pointer; font-size: 14px; font-family: inherit; line-height: 1.5;">Send</button>
-      </div>
+
     </div>
     <!-- Image RIGHT -->
     <div style="flex: 1; min-width: 280px;">
